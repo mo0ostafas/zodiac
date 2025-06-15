@@ -52,6 +52,23 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
 }
 
+hgroup {
+  text-align: center;
+  margin-bottom: 80px;
+
+  h2 {
+    font-size: 2em;
+  }
+
+  p {
+    margin-top: 20px;
+    width: 50%;
+    margin-inline: auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+}
+
 ul {
   list-style: none;
 
@@ -107,6 +124,14 @@ img {
 
 section {
   min-height: 100vh;
+
+  &:nth-child(odd) {
+    background-color: var(--primary-color);
+  }
+
+  &:not(.hero) {
+    padding-block: 100px;
+  }
 }
 
 .container {
@@ -255,7 +280,27 @@ header {
 }
 
 /********** about **********/
-.about {
+.horoscopes {
+  .horoscopes-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+    .card img {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .horoscopes-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .horoscopes-cards {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }
 
 /********** services **********/
