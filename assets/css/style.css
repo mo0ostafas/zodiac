@@ -292,6 +292,12 @@ header {
 
     .horoscope-card img {
       width: 100%;
+      transition: 0.3s;
+
+      &:hover {
+        transform: rotate(360deg);
+        cursor: pointer;
+      }
     }
   }
 
@@ -321,6 +327,7 @@ header {
     padding: 25px;
     display: flex;
     flex-direction: column;
+    transition: 0.3s;
 
     h3 {
       font-size: 1.3em;
@@ -351,6 +358,25 @@ header {
     a.btn.cta {
       display: block;
       text-align: center;
+    }
+
+    &:hover {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+
+      h3 {
+        color: var(--primary-shade);
+      }
+
+      ul.features li::before {
+        background-color: var(--primary-tilt);
+        color: white;
+      }
+
+      a.btn.cta {
+        background-color: var(--primary-tilt);
+        color: white;
+      }
     }
   }
 
