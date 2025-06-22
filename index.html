@@ -291,10 +291,42 @@
     <section class="contact" id="contact">
       <div class="container">
         <hgroup>
-          <h2></h2>
-          <p></p>
+          <h2>Your Energy Has Reached the Right Orbit</h2>
+          <p>Choose the reason for your message and connect with someone who reads beyond the surface.</p>
         </hgroup>
-        <!-- ? -->
+        <div class="content">
+          <div class="beside-img">
+            <img src="./assets/imgs/zodiac.png" alt="">
+          </div>
+
+          <form method="post">
+            <div class="form-field">
+              <label for="name">Full Name</label>
+              <input id="name" class="form-control" type="text" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" class="form-control" type="email" name="email" placeholder="example@gmail.com" required />
+            </div>
+            <div class="form-field">
+              <label for="subject">Subject</label>
+              <select id="subject" class="form-control" name="subject" required title="Select Message Type">
+                <option value="" disabled selected>-- Select Message Type --</option>
+                <option value="subscription">Subscription Request</option>
+                <option value="question">Ask a Question</option>
+                <option value="support">Technical Support</option>
+                <option value="booking">Book a Session</option>
+                <option value="feedback">Giving a Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="msg">Message</label>
+              <textarea id="msg" class="form-control" name="msg" placeholder="Your message or request..." required></textarea>
+            </div>
+            <button type="submit" class="cta">Send Message</button>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -305,7 +337,7 @@
           <h2></h2>
           <p></p>
         </hgroup>
-        <!-- ? -->
+        
       </div>
     </section>
   </main>
