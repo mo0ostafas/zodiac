@@ -5,7 +5,8 @@ html {
 
 :root {
   --primary-tilt: #1F2D52;
-  --primary-color: #0D1B3D;
+  --primary-color: #0d1b3d;
+  --primary-rgb: 13, 27, 61;
   --primary-shade: #0A162F;
   --secondary-tilt: #FFE2A8;
   --secondary-color: #FFD285;
@@ -15,8 +16,14 @@ html {
   --transition-duration: 0.3s;
 }
 
-::-webkit-scrollbar{
-  width: 0;
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-tilt);
+  border-radius: 25px;
 }
 
 * {
@@ -62,20 +69,18 @@ hgroup {
 
   p {
     margin-top: 20px;
-    width: 50%;
     margin-inline: auto;
     font-size: 1.1em;
     line-height: 1.6;
+
+    @media screen and (min-width: 992px) {
+      width: 60%;
+    }
   }
 }
 
 ul {
   list-style: none;
-
-  &.social-links {
-    display: flex;
-    gap: 20px;
-  }
 }
 
 a {
@@ -98,22 +103,13 @@ button, a.btn {
     display: inline-block;
     font-weight: bold;
   }
-
-  &.floating-btn {
-    position: fixed;
-    bottom: 20px;
-    font-size: 2.5em;
-    background-color: transparent;
-    border-radius: 50%;
-    display: none;
-  }
 }
 
 textarea {
   resize: vertical;
 }
 
-[class*=" fa-"] {
+[class*="fa-"] {
   color: var(--secondary-color);
 }
 
@@ -123,6 +119,7 @@ img {
 
 section {
   min-height: 100vh;
+  overflow: hidden;
 
   &:nth-child(odd) {
     background-color: var(--primary-color);
@@ -135,6 +132,10 @@ section {
 
   &:not(.hero) {
     padding-block: 100px;
+  }
+
+  @media screen and (min-height: 700px) {
+    min-height: unset;
   }
 }
 
@@ -549,18 +550,132 @@ header {
 
 /********** testimonials **********/
 .testimonials {
+  min-height: unset;
+
+  .testimonial-slider {
+    color: var(--primary-color);
+    width: 90%;
+    max-width: 700px;
+    margin-inline: auto;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    background-color: var(--secondary-tilt);
+    font-family: Arial, sans-serif;
+    position: relative;
+    touch-action: pan-y;
+
+    .slides {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      will-change: transform;
+
+      .slide {
+        width: 100%;
+        flex-shrink: 0;
+        padding: 2rem;
+        text-align: center;
+        font-size: 1.1rem;
+        background-color: var(--secondary-tilt);
+
+        .client-name {
+          color: var(--primary-color);
+          font-family: 1.1em;
+          font-weight: 900;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .nav {
+    text-align: center;
+    margin: 1rem 0;
+    
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: white;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s;
+      
+      &.active {
+        background-color: var(--primary-tilt);
+      }
+    }
+  }
 }
 
 /********** footer **********/
-.footer {
+footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding-block: 20px;
+  margin-bottom: 50px;
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 992px) {
+    margin-bottom: 0;
+  }
 }
 
 /********** go to top **********/
-button#top {
-  right: 20px;
-}
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  max-height: 50px;
 
-button#offcanvasToggler {
-  left: 20px;
-  width: 40px;
+  a {
+    color: var(--primary-color);
+    font-weight: 700;
+
+    [class*="fa-"] {
+      display: none;
+    }
+
+    &::after {
+      content: attr(title);
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    top: unset;
+    left: unset;
+    bottom: 0;
+    background-color: transparent;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+
+    a {
+      [class*="fa-"] {
+        display: block;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
 }

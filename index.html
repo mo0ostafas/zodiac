@@ -334,10 +334,30 @@
     <section class="testimonials" id="testimonials">
       <div class="container">
         <hgroup>
-          <h2></h2>
-          <p></p>
+          <h2>What Clients Are Saying</h2>
+          <p>Discover how personal readings, energy sessions, and astrological guidance have empowered real people on their path toward purpose and peace.</p>
         </hgroup>
-        
+        <div class="testimonial-slider" id="testimonialSlider">
+          <div class="slides" id="testimonialSlides">
+            <div class="slide">
+              <span class="client-name">Emelie</span>
+              <q>The birth chart reading felt deeply personal and surprisingly accurate.</q>
+            </div>
+            <div class="slide">
+              <span class="client-name">Viktor</span>
+              <q>These services helped me understand my rising sign and how it affects my decisions.</q>
+            </div>
+            <div class="slide">
+              <span class="client-name">Maja</span>
+              <q>The relationship compatibility session gave me so much clarity!</q>
+            </div>
+            <div class="slide">
+              <span class="client-name">Johan</span>
+              <q>Honestly, the energy reading helped me align with my goals.</q>
+            </div>
+          </div>
+          <div class="nav" id="testimonialNav"></div>
+        </div>
       </div>
     </section>
   </main>
@@ -345,9 +365,7 @@
   <!-- footer -->
   <footer>
     <div class="container">
-      <div class="logo">
-        <img src="" alt="">
-      </div>
+      <p class="copyrights">All Copyrights Reserved &copy; <span id="year"></span></p>
       <ul class="social-links">
         <li><a href="https://facebook.com/?" title="Facebook Profile" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a></li>
         <li><a href="https://instagram.com/?" title="Instagram Profile" rel="noopener"><i class="fa-brands fa-instagram"></i></a></li>
@@ -361,11 +379,15 @@
     </div>
   </footer>
 
-  <!-- top button -->
-  <button class="floating-btn" id="top" type="button" title="Go to top"><i class="fa-solid fa-circle-up"></i></button>
-  
-  <!-- offcanvas -->
-  <button class="floating-btn" id="offcanvasToggler" type="button" title="Open Menu"><img src="assets/imgs/crystal-ball.png" alt="Crystal Ball"></button>
+  <!-- bottom bar -->
+  <div class="bottom-bar">
+    <a id="top" href="#" title="Go to top">
+      <i class="fa-solid fa-circle-up fa-3x"></i>
+    </a>
+    <a id="whats" href="https://wa.me/?" target="_blank" title="Contact me on Whatsapp" rel="noopener">
+      <i class="fa-brands fa-whatsapp fa-3x"></i>
+    </a>
+  </div>
 
   <!-- size error message -->
   <p class="err-msg">Try using larger device 👾</p>
