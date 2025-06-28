@@ -11,8 +11,8 @@ html {
   --secondary-tilt: #FFE2A8;
   --secondary-color: #FFD285;
   --secondary-shade: #CC9F62;
-  --heading-font: "Cinzel Decorative", serif;
-  --text-font: "Lora", serif;
+  --heading-font: "Krona One", sans-serif;
+  --text-font: "Voltaire", sans-serif;
   --transition-duration: 0.3s;
 }
 
