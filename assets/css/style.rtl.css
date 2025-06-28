@@ -1,0 +1,47 @@
+/********** global **********/
+:root {
+  --heading-font: "Cinzel Decorative", serif;
+  --text-font: "Lora", serif;
+}
+
+body {
+  direction: rtl;
+}
+
+
+/********** hero **********/
+.hero {
+  background: url(../imgs/hero-rtl.png);
+  background-position: top right;
+}
+
+
+/********** services **********/
+.services .service-card ul.features li::before {
+  margin-right: unset;
+  margin-left: 10px;
+}
+
+
+/********** pricing **********/
+.pricing .pricing-card:last-of-type::after {
+  left: unset;
+  right: 100%;
+  transform: translate(50%, -50%) rotate(-90deg);
+}
+    
+.pricing .pricing-card:last-of-type:hover::after {
+  right: unset;
+  left: 0;
+}
+
+.pricing .pricing-card ul.features li::before {
+  margin-right: unset;
+  margin-left: 10px;
+}
+
+
+/********** contact **********/
+.contact .content form .form-field label {
+  text-align: right;
+}

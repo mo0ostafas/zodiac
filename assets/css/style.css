@@ -37,7 +37,7 @@ html {
   display: none;
 }
 
-@media screen and (max-width: 300px) { /* Handle xxs devices */
+@media screen and (max-width: 300px) {
   * {
     display: none;
   }
